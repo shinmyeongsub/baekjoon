@@ -5,6 +5,18 @@ public class Main {
         Bronze bronze = new Bronze();
 //        bronze.q2557();
 //        bronze.q1000();
-        bronze.q1001();
+//        bronze.q1001();
+//        bronze.q10998();
+//        bronze.q1008();
+//        bronze.q10869();
+//        bronze.q10926();
+//        bronze.q18108();
+//        bronze.q10430();
+//        bronze.q2488();
+//        bronze.q11382();
+//        bronze.q10171();
+//        bronze.q10172();
+//        bronze.q1330();
+//        bronze.q9598();
     }
 }
