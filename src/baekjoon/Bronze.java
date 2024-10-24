@@ -1,8 +1,102 @@
 package baekjoon;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Bronze {
+
+    public void q2525() {
+
+    }
+
+    public void q2480() {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int z = sc.nextInt();
+        sc.close();
+
+        List<Integer> numList = Arrays.asList(x,y,z);
+        List<Integer> newNumList = numList.stream().distinct().collect(Collectors.toList());
+
+        int result = 0;
+        switch (newNumList.size()) {
+            case 1:
+                result = 10000 + newNumList.get(0) * 1000;
+                break;
+            case 2:
+                for (int n : newNumList) {
+                    numList.remove(n);
+                }
+                System.out.println("numList = " + numList);
+                break;
+            case 3:
+                break;
+        }
+        System.out.println(result);
+    }
+
+    public void q2884() {
+        Scanner sc = new Scanner(System.in);
+        int H = sc.nextInt();
+        int M = sc.nextInt();
+        sc.close();
+
+        if (H == 0) {
+            if (M < 45) {
+                H = 23;
+                M += 15;
+            } else {
+                M -= 45;
+            }
+        } else {
+            if (M < 45) {
+                H -= 1;
+                M += 15;
+            } else {
+                M -= 45;
+            }
+        }
+        System.out.println(H + " " + M);
+    }
+
+    public void q14681() {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        sc.close();
+
+        int result = 0;
+        if (x > 0) {
+            if (y > 0) {
+                result = 1;
+            } else {
+                result = 4;
+            }
+        } else {
+            if (y > 0) {
+                result =  2;
+            } else {
+                result = 3;
+            }
+        }
+
+        System.out.println(result);
+    }
+
+    public void q2753() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
+
+        if ((n % 400 == 0) || (n % 4 == 0 && n % 100 != 0)) {
+            System.out.println(1);
+        } else {
+            System.out.println(0);
+        }
+    }
 
     public void q9598() {
         Scanner scanner = new Scanner(System.in);
