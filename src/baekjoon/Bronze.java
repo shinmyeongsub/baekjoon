@@ -1,14 +1,29 @@
 package baekjoon;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Bronze {
-
     public void q2525() {
+        Scanner sc = new Scanner(System.in);
+        int hour = sc.nextInt();
+        int minute = sc.nextInt();
+        int interval = sc.nextInt();
 
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+            String timeStr = hour + ":" + minute;
+            Date date = format.parse(timeStr);
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            calendar.add(Calendar.MINUTE, interval);
+
+            System.out.println(calendar.getTime().getHours() + " " + calendar.getTime().getMinutes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void q2480() {
@@ -27,10 +42,8 @@ public class Bronze {
                 result = 10000 + newNumList.get(0) * 1000;
                 break;
             case 2:
-                for (int n : newNumList) {
-                    numList.remove(n);
-                }
                 System.out.println("numList = " + numList);
+                System.out.println("newNumList = " + newNumList);
                 break;
             case 3:
                 break;
