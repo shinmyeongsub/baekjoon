@@ -3,6 +3,11 @@ import baekjoon.Bronze;
 public class Main {
     public static void main(String[] args) {
         Bronze bronze = new Bronze();
+        bronze.q25314();
+//        bronze.q25304();
+//        bronze.q8393();
+//        bronze.q10950();
+//        bronze.q2739();
 //        bronze.q2525();
 //        bronze.q2480();
 //        bronze.q2884();

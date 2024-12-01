@@ -5,6 +5,66 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Bronze {
+
+    public void q25314() {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        for (int i = 0; i < N/4; i++) {
+            System.out.print("long ");
+        }
+        System.out.println("int");
+    }
+
+    public void q25304() {
+        Scanner sc = new Scanner(System.in);
+        int X = sc.nextInt();
+        int N = sc.nextInt();
+
+        int expectedTotal = 0;
+
+        for (int i = 0; i < N; i++) {
+            int price = sc.nextInt();
+            int amount = sc.nextInt();
+
+            expectedTotal += price * amount;
+        }
+
+        System.out.println(expectedTotal == X ? "Yes" : "No");
+    }
+
+    public void q8393() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int result = 0;
+
+        while (n != 0) {
+            result += n;
+            n--;
+        }
+
+        System.out.println(result);
+    }
+
+    public void q10950() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            System.out.println(a + b);
+        }
+    }
+
+    public void q2739() {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for (int i = 1; i < 10; i++) {
+            System.out.println(N + " * " + i + " = " + i * N);
+        }
+    }
+
     public void q2525() {
         Scanner sc = new Scanner(System.in);
         int hour = sc.nextInt();
@@ -33,8 +93,8 @@ public class Bronze {
         int z = sc.nextInt();
         sc.close();
 
-        List<Integer> numList = Arrays.asList(x,y,z);
-        List<Integer> newNumList = numList.stream().distinct().collect(Collectors.toList());
+        List<Integer> numList = new ArrayList<>(Arrays.asList(x,y,z));
+        List<Integer> newNumList = new ArrayList<>(numList.stream().distinct().collect(Collectors.toList()));
 
         int result = 0;
         switch (newNumList.size()) {
@@ -42,10 +102,14 @@ public class Bronze {
                 result = 10000 + newNumList.get(0) * 1000;
                 break;
             case 2:
-                System.out.println("numList = " + numList);
-                System.out.println("newNumList = " + newNumList);
+                for (int i : newNumList) {
+                    numList.remove(Integer.valueOf(i));
+                }
+                result = 1000 + numList.get(0) * 100;
                 break;
             case 3:
+                List<Integer> sortedNumList = numList.stream().sorted().collect(Collectors.toList());
+                result = sortedNumList.get(sortedNumList.size() - 1) * 100;
                 break;
         }
         System.out.println(result);
