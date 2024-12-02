@@ -1,10 +1,164 @@
 package baekjoon;
 
-import java.text.SimpleDateFormat;
+import java.io.*;
 import java.util.*;
+import java.text.SimpleDateFormat;
 import java.util.stream.Collectors;
 
 public class Bronze {
+
+    public void q10807() {
+
+    }
+
+    public void q10951() {
+        Scanner sc = new Scanner(System.in);
+
+        while (sc.hasNextInt()) {
+            int A = sc.nextInt();
+            int B = sc.nextInt();
+
+            System.out.println(A+B);
+        }
+        sc.close();
+    }
+
+    public void q10952() {
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            int A = sc.nextInt();
+            int B = sc.nextInt();
+
+            if (A == 0 && B == 0) {
+                break;
+            }
+
+            System.out.println(A+B);
+        }
+    }
+
+    public void q2439() {
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            int N = Integer.parseInt(br.readLine());
+
+            for (int i = 0; i < N; i++) {
+
+                for (int j = 0; j < N-i-1; j++) {
+                    System.out.print(" ");
+                }
+
+                for (int j = 0; j < i+1; j++) {
+                    System.out.print("*");
+                }
+
+                System.out.println();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void q2438() {
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            int N = Integer.parseInt(br.readLine());
+
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < i+1; j++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void q11022() {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        StringTokenizer st;
+
+        try {
+            int T = Integer.parseInt(br.readLine());
+            for (int i = 1; i <= T; i++) {
+                st = new StringTokenizer(br.readLine());
+
+                int A = Integer.parseInt(st.nextToken());
+                int B = Integer.parseInt(st.nextToken());
+
+                bw.write("Case #" + i + ": " + A + " + " + B + " = " + (A + B));
+                bw.newLine();
+            }
+            bw.flush();
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void q11021() {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        StringTokenizer st;
+
+        try {
+            int T = Integer.parseInt(br.readLine());
+            for (int i = 1; i <= T; i++) {
+                st = new StringTokenizer(br.readLine());
+                bw.write("Case #" + i + ": " + (Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken())));
+                bw.newLine();
+            }
+            bw.flush();
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void q15552() {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        StringTokenizer st;
+
+        try {
+            int T = Integer.parseInt(br.readLine());
+            for (int i = 0; i < T; i++) {
+                st = new StringTokenizer(br.readLine());
+                bw.write(String.valueOf(Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken())));
+                bw.newLine();
+            }
+            bw.flush();
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 내가 한거 Runtime ?? 왜 일까?
+//    public void q15552() {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//        try {
+//            int T = Integer.parseInt(br.readLine());
+//            for (int i = 0; i < T; i++) {
+//                int A = Integer.parseInt(br.readLine());
+//                int B = Integer.parseInt(br.readLine());
+//                bw.write(String.valueOf(A + B));
+//                bw.newLine();
+//            }
+//            bw.flush();
+//            bw.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void q25314() {
         Scanner sc = new Scanner(System.in);
