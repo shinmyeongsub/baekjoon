@@ -7,8 +7,34 @@ import java.util.stream.Collectors;
 
 public class Bronze {
 
-    public void q10807() {
+    public void q10871() {
+        Scanner sc = new Scanner(System.in);
 
+        int N = sc.nextInt();
+        int X = sc.nextInt();
+
+
+    }
+
+    public void q10807() {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < N; i++) {
+            list.add(sc.nextInt());
+        }
+
+        int v = sc.nextInt();
+        int count = 0;
+
+        for (int num : list) {
+            count = num == v ? ++count : count;
+        }
+
+        System.out.println(count);
     }
 
     public void q10951() {
