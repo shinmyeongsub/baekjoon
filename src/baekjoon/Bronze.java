@@ -7,13 +7,181 @@ import java.util.stream.Collectors;
 
 public class Bronze {
 
+    public void q10809() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+    }
+
+    public void q11720() {
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine());
+
+        String numStr = sc.nextLine();
+        int sum = 0;
+
+        for (int i = 0; i < n; i++) {
+            sum += Integer.parseInt(String.valueOf(numStr.charAt(i)));
+        }
+        System.out.println(sum);
+    }
+
+    public void q11654() {
+        Scanner sc = new Scanner(System.in);
+        String c = sc.nextLine();
+
+        System.out.println(c.charAt(0) + 0);
+    }
+
+    public void q9086() {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for (int i = 0; i < N; i++) {
+            String str = sc.next();
+            System.out.println(str.charAt(0) + "" + str.charAt(str.length() - 1));
+        }
+    }
+
+    public void q2743() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(sc.nextLine().length());
+    }
+
+    public void q27866() {
+        Scanner sc = new Scanner(System.in);
+
+        String S = sc.nextLine();
+        int i = sc.nextInt();
+
+        System.out.println(S.charAt(i - 1));
+    }
+
+    public void q1546() {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();
+        double[] scores = new double[N];
+        for (int i = 0; i < N; i++) {
+            scores[i] = sc.nextInt();
+        }
+
+        double maxScore = 0;
+        for (double score : scores) {
+            if (score > maxScore) {
+                maxScore = score;
+            }
+        }
+
+        for (int i = 0; i < N; i++) {
+            scores[i] = scores[i] / maxScore * 100;
+        }
+
+        double totalScore = 0;
+        for (double score : scores) {
+            totalScore += score;
+        }
+
+        System.out.println(totalScore / N);
+    }
+
+    public void q3052() {
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(sc.nextInt() % 42);
+        }
+
+        HashMap<String, Integer> map = new HashMap<>();
+        for (Integer i : list) {
+            map.put(String.valueOf(i), i);
+        }
+
+        System.out.println(map.size());
+    }
+
+    public void q5579() {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        ArrayList<Integer> arrayList2 = new ArrayList<>();
+
+        for (int i = 0; i < 30; i++) {
+            arrayList2.add(i + 1);
+        }
+
+        for (int i = 0; i < 28; i++) {
+            arrayList.add(sc.nextInt());
+        }
+
+        for (Object o : arrayList) {
+            if (arrayList2.remove(o));
+        }
+
+        if (arrayList2.get(0) > arrayList2.get(1)) {
+            System.out.println(arrayList2.get(1));
+            System.out.println(arrayList2.get(0));
+        } else {
+            System.out.println(arrayList2.get(0));
+            System.out.println(arrayList2.get(1));
+        }
+    }
+
+    public void q2562() {
+        Scanner sc = new Scanner(System.in);
+
+        int[] arr = new int[9];
+        int max = 0;
+        int position = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) max = arr[i];
+            if (arr[i] == max) position = i+1;
+        }
+
+        System.out.println(max);
+        System.out.println(position);
+    }
+
+    public void q10818() {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+
+        for (int i = 0; i < N; i++) {
+            int x = sc.nextInt();
+            arr[i] = x;
+        }
+
+        int min = arr[0];
+        int max = arr[0];
+        for (int i : arr) {
+            if (i < min) min = i;
+            if (i > max) max = i;
+        }
+
+        System.out.println(min);
+        System.out.println(max);
+    }
+
     public void q10871() {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
         int X = sc.nextInt();
 
+        int[] A = new int[N];
+        for (int i = 0; i < N; i++) {
+            int x = sc.nextInt();
+            A[i] = x;
+        }
 
+        for (int i : A) {
+            if (i < X) System.out.println(i);
+        }
     }
 
     public void q10807() {
