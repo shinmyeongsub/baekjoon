@@ -7,10 +7,139 @@ import java.util.stream.Collectors;
 
 public class Bronze {
 
-    public void q10809() {
+    public void q25083() {
+        System.out.println("         ,r'\"7");
+        System.out.println("r`-_   ,'  ,/");
+        System.out.println(" \\. \". L_r'");
+        System.out.println("   `~\\/");
+        System.out.println("      |");
+        System.out.println("      |");
+    }
+
+    public void q11718() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        String input;
+
+        while ((input = br.readLine()) != null) {
+            bw.write(input);
+            bw.newLine();
+        }
+
+        br.close();
+        bw.close();
+    }
+
+    public void q5622() {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
+
+        int delay = 0;
+        for (int i = 0; i < str.length(); i++) {
+            switch (str.charAt(i)+"") {
+                case "A":
+                case "B":
+                case "C":
+                    delay += 3;
+                    break;
+                case "D":
+                case "E":
+                case "F":
+                    delay += 4;
+                    break;
+                case "G":
+                case "H":
+                case "I":
+                    delay += 5;
+                    break;
+                case "J":
+                case "K":
+                case "L":
+                    delay += 6;
+                    break;
+                case "M":
+                case "N":
+                case "O":
+                    delay += 7;
+                    break;
+                case "P":
+                case "Q":
+                case "R":
+                case "S":
+                    delay += 8;
+                    break;
+                case "T":
+                case "U":
+                case "V":
+                    delay += 9;
+                    break;
+                case "W":
+                case "X":
+                case "Y":
+                case "Z":
+                    delay += 10;
+                    break;
+            }
+        }
+        System.out.println(delay);
     }
+
+    public void q2908() {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        String strA = String.valueOf(a);
+        String strB = String.valueOf(b);
+
+        strA = "" + strA.charAt(strA.length() - 1) + strA.charAt(strA.length() - 2) + strA.charAt(strA.length() - 3) ;
+        strB = "" + strB.charAt(strB.length() - 1) + strB.charAt(strB.length() - 2) + strB.charAt(strB.length() - 3) ;
+
+        if (Integer.parseInt(strA) > Integer.parseInt(strB)) {
+            System.out.println(strA);
+        } else {
+            System.out.println(strB);
+        }
+    }
+
+    public void q1152() {
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine().trim();
+        if (str.equals("")) {
+            System.out.println(0);
+        } else{
+            List<String> list = Arrays.asList(str.split(" "));
+            System.out.println(list.size());
+        }
+    }
+
+    public void q2675() {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        for (int i = 0; i < T; i++) {
+            int R = sc.nextInt();
+            String S = sc.next();
+            String str = "";
+            for (int j = 0; j < S.length(); j++) {
+                for (int k = 0; k < R; k++) {
+                    str += S.charAt(j);
+                }
+            }
+            System.out.println(str);
+        }
+    }
+
+//    public void q10809() {
+//        Scanner sc = new Scanner(System.in);
+//        String str = sc.nextLine();
+//
+//        for (int i = 0; i < str.length(); i++) {
+//            int a = str.charAt(i) - 96;
+//            System.out.println("a = " + a);
+//        }
+//    }
 
     public void q11720() {
         Scanner sc = new Scanner(System.in);
