@@ -7,6 +7,159 @@ import java.util.stream.Collectors;
 
 public class Bronze {
 
+    public void q1157() {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+
+        int[] alphabets = new int[26];
+        for (int i = 0; i < text.length(); i++) {
+            if(text.charAt(i) >= 65 && text.charAt(i) <= 90){
+                alphabets[text.charAt(i) - 'A']++;
+            } else if(text.charAt(i) >= 97 && text.charAt(i) <= 122){
+                alphabets[text.charAt(i) - 'a']++;
+            }
+        }
+
+        int max = Arrays.stream(alphabets).max().getAsInt();
+
+        List<Integer> maxes = new ArrayList<>();
+        for (int i = 0; i < alphabets.length; i++) {
+            if(alphabets[i] == max){
+                maxes.add(i);
+            }
+        }
+
+        if(maxes.size() > 1){
+            System.out.println("?");
+        } else {
+            System.out.println((char) (maxes.get(0) + 65));
+        }
+    }
+
+    public void q10988() {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+
+        if (text.length() % 2 == 0) {
+            List<Character> tmpArr1 = new ArrayList<>();
+            List<Character> tmpArr2 = new ArrayList<>();
+            for (int i = 1; i <= text.length(); i++) {
+                if (i <= text.length() / 2) {
+                    tmpArr1.add(text.charAt(i-1));
+                } else {
+                    tmpArr2.add(text.charAt(i-1));
+                }
+            }
+
+            Collections.reverse(tmpArr2);
+            if (tmpArr1.equals(tmpArr2)) {
+                System.out.println(1);
+            } else {
+                System.out.println(0);
+            }
+        } else {
+            List<Character> tmpArr1 = new ArrayList<>();
+            List<Character> tmpArr2 = new ArrayList<>();
+            for (int i = 1; i <= text.length(); i++) {
+                if (i <= text.length() / 2) {
+                    tmpArr1.add(text.charAt(i-1));
+                } else {
+                    tmpArr2.add(text.charAt(i-1));
+                }
+            }
+            tmpArr2.remove(0);
+            Collections.reverse(tmpArr2);
+
+            if (tmpArr1.equals(tmpArr2)) {
+                System.out.println(1);
+            } else {
+                System.out.println(0);
+            }
+        }
+    }
+
+    public void q2444Ex() {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for (int i = 0; i < N * 2 - 1; i++) {
+            int spaces, stars;
+
+            if (i < N) {
+                // 증가 단계
+                spaces = N - i - 1;
+                stars = 2 * i + 1;
+            } else {
+                // 감소 단계
+                spaces = i - N + 1;
+                stars = 2 * (N * 2 - i - 1) - 1;
+            }
+
+            for (int j = 0; j < spaces; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 0; j < stars; j++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+
+
+    public void q2444() {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for (int i = 0; i < N * 2 - 1; i++) {
+            if (i < N) {
+                for (int j = 0; j < N - i - 1; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = 0; j < i * 2 + 1; j++) {
+                    System.out.print("*");
+                }
+                for (int j = 0; j < N - i - 1; j++) {
+                    System.out.print(" ");
+                }
+                System.out.println();
+            } else {
+                for (int j = 0; j < i - N + 1; j++) {
+                    System.out.print(" ");
+                }
+                for (int j = 0; j < 2 * (2* N - i - 1) - 1; j++) {
+                    System.out.print("*");
+                }
+                for (int j = 0; j < i - N + 1; j++) {
+                    System.out.print(" ");
+                }
+                System.out.println();
+            }
+        }
+    }
+
+    public void q3003() {
+        Scanner sc = new Scanner(System.in);
+
+        int[] chessSet = {1, 1, 2, 2, 2, 8};
+        int[] providedChessSet = new int[6];
+        int[] diffChessSet = new int[6];
+
+        for (int i = 0; i < 6; i++) {
+            providedChessSet[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < chessSet.length; i++) {
+            diffChessSet[i] = chessSet[i] - providedChessSet[i];
+        }
+
+        for (int i : diffChessSet) {
+            System.out.println(i);
+        }
+
+    }
+
     public void q25083() {
         System.out.println("         ,r'\"7");
         System.out.println("r`-_   ,'  ,/");
